@@ -1,5 +1,5 @@
 {% set name = "opentelemetry-exporter-otlp-proto-http" %}
-{% set version = "1.16.0" %}
+{% set version = "1.18.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_exporter_otlp_proto_http-{{ version }}.tar.gz
-  sha256: d7f14ae8b41b3606ee3e4ab12d42cb48610d8419f1d8b92c7d3ff5813c7a10d7
+  sha256: d9a2118558decf9e9a2d6573ad9d33876f3a44d7dc43f10d38a900d5a6f867d6
 
 build:
   number: 0
@@ -24,10 +24,13 @@ requirements:
     - python >=3.7
     - googleapis-common-protos ~=1.52
     - opentelemetry-api ~=1.15
-    - opentelemetry-proto ==1.16.0
-    - opentelemetry-sdk ~=1.16.0
+    - opentelemetry-proto ==1.18.0
+    - opentelemetry-sdk ~=1.18.0
     - requests ~=2.7
     # - responses ==0.22.0
+    # - responses ==0.22.0
+    # - opentelemetry-exporter-otlp-proto-common ==1.18.0
+    # - deprecated >=1.2.6
 
 test:
   imports:
