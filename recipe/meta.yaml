@@ -1,5 +1,5 @@
 {% set name = "opentelemetry-exporter-otlp-proto-http" %}
-{% set version = "1.22.0" %}
+{% set version = "1.23.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_exporter_otlp_proto_http-{{ version }}.tar.gz
-  sha256: 79ed108981ec68d5f7985355bca32003c2f3a5be1534a96d62d5861b758a82f4
+  sha256: 088eac2320f4a604e2d9ff71aced71fdae601ac6457005fb0303d6bbbf44e6ca
 
 build:
-  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
@@ -52,3 +52,7 @@ extra:
   recipe-maintainers:
     - rxm7706
     - mariusvniekerk
+    - conda-forge/opentelemetry-api
+    - conda-forge/opentelemetry-proto
+    - conda-forge/opentelemetry-sdk
+    - conda-forge/opentelemetry-exporter-otlp-proto-common
