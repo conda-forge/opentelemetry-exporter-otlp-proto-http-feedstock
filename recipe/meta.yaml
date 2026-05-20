@@ -1,5 +1,5 @@
 {% set name = "opentelemetry-exporter-otlp-proto-http" %}
-{% set version = "1.41.0" %}
+{% set version = "1.42.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_exporter_otlp_proto_http-{{ version }}.tar.gz
-  sha256: dcd6e0686f56277db4eecbadd5262124e8f2cc739cadbc3fae3d08a12c976cf5
+  sha256: 640013aacdbbe01bfb187c66dd331b24249517b7f36c0cd994ef75544d1dbd0b
 
 build:
   noarch: python
@@ -23,16 +23,17 @@ requirements:
     - typing_extensions >=4.5.0
     - python >={{ python_min }}
     - deprecated >=1.2.6
-    - googleapis-common-protos ~=1.52
-    - opentelemetry-api ~=1.15
-    - opentelemetry-proto ==1.41.0
-    - opentelemetry-sdk >=1.41.0,<1.42.dev0
-    - opentelemetry-exporter-otlp-proto-common ==1.41.0
-    - requests ~=2.7
+    - googleapis-common-protos >=1.52,<2.dev0
+    - opentelemetry-api >=1.15,<2.dev0
+    - opentelemetry-proto ==1.42.0
+    - opentelemetry-sdk >=1.42.0,<1.43.dev0
+    - opentelemetry-exporter-otlp-proto-common ==1.42.0
+    - requests >=2.7,<3.dev0
   # NOTE backoff only required for py<37 but pip checks fails without it
     #- backoff >=1.10.0,<3.0.0
     # - responses ==0.22.0
     # - typing_extensions >=4.5.0
+    # - opentelemetry-exporter-credential-provider-gcp >=0.59b0
     # - opentelemetry-exporter-credential-provider-gcp >=0.59b0
     # - opentelemetry-exporter-credential-provider-gcp >=0.59b0
     # - opentelemetry-exporter-credential-provider-gcp >=0.59b0
