@@ -3,6 +3,7 @@ schema_version: 1
 context:
   name: opentelemetry-exporter-otlp-proto-http
   version: "1.45.0"
+  version_minor: ${{ (version | split('.'))[:2] | join('.') }}
 
 package:
   name: ${{ name|lower }}
@@ -29,7 +30,9 @@ requirements:
     - googleapis-common-protos >=1.52,<2.dev0
     - opentelemetry-api >=1.15,<2.dev0
     - opentelemetry-proto ${{ version }}.*
-    - opentelemetry-sdk >=1.44.0,<1.45.dev0
+    - opentelemetry-sdk ${{ version_minor }}.*
+    - opentelemetry-exporter-http-transport ${{ version }}.*
+    - opentelemetry-exporter-otlp-common ${{ version }}.*
     - opentelemetry-exporter-otlp-proto-common ${{ version }}.*
     - requests >=2.7,<3.dev0
 
