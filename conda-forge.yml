@@ -1,7 +1,6 @@
 bot:
   automerge: true
   check_solvable: true
-  run_deps_from_wheel: true
   inspection: update-grayskull
 conda_forge_output_validation: true
 github:
@@ -9,3 +8,5 @@ github:
   tooling_branch_name: main
 conda_build:
   pkg_format: '2'
+conda_install_tool: pixi
+conda_build_tool: rattler-build
